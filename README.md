@@ -4,9 +4,9 @@ Bilal, Baptiste, Petro, Stas (BelgianEast raaaah)
 
 ---
 
-## MERN Hello World
+## Tectonic Chat (MERN)
 
-Minimal MERN stack app that displays **Hello World** from MongoDB through an Express API to a React frontend.
+ChatGPT-style chat UI on a MERN stack. Type a message, optionally attach files, press **Send**, and get a placeholder lorem ipsum reply.
 
 ### Stack
 
@@ -26,7 +26,8 @@ npm start
 Then open [http://localhost:3000](http://localhost:3000).
 
 - Frontend: `http://localhost:3000`
-- Backend API: `http://localhost:5000/api/hello`
+- Chat API: `POST http://localhost:5000/api/chat` (`text` + optional `files`)
+- History: `GET http://localhost:5000/api/messages`
 
 ### Optional: real MongoDB
 
