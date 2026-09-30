@@ -476,6 +476,7 @@ button {
   width: min(340px, 78vw);
   height: min(340px, 78vw);
   margin: 0 auto;
+  perspective: 900px;
 }
 
 .orbit-core {
@@ -523,6 +524,8 @@ button {
   place-content: center;
   gap: 0.35rem;
   padding: 0.5rem;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
   animation: file-spin-self 2.4s linear infinite;
 }
 
