@@ -1,2 +1,3 @@
-# tectonic-hackaton
-tectonic hackaton 2026, KBC challenge
+# Tectonic hackaton
+
+Bilal, Baptiste, Petro, Stas (BelgianEast raaaah)
