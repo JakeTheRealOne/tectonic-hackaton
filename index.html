@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clarify — Knowledge meets people</title>
+<meta name="description" content="A fictional hackathon demo that turns gaps in organisational knowledge into explainable expert recommendations.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23c52558'/%3E%3Cpath d='M27 12a11 11 0 1 0 0 16M20 14v12M14 20h12' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a href="./" class="brand" aria-label="Clarify home"><span class="brand-icon" aria-hidden="true">c<span>·</span></span>clarify<span class="brand-divider"></span><span class="workspace">Knowledge workspace</span></a><div class="header-right"><span class="demo-badge">Fictional demo</span><button class="text-button" id="reset" type="button">New search</button><span class="user-avatar" aria-label="Demo user Alex">AL</span></div></header>
+<main id="main">
+<section class="search-area" id="search-area" aria-labelledby="page-title">
+<div class="intro"><div class="eyebrow">KNOWLEDGE MEETS PEOPLE</div><h1 id="page-title">Find an answer.<br><span>Know who can take it further.</span></h1><p>Search the evidence. Find the missing piece.</p></div>
+<form id="search-form"><label for="question" class="sr-only">Ask a question about your work</label><div class="search-box"><svg viewBox="0 0 24 24" class="search-icon" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><textarea id="question" rows="2" maxlength="600" placeholder="What do you need to know?" required></textarea><button id="search-button" type="submit">Search <span aria-hidden="true">↵</span></button></div><p class="error" id="input-error" role="alert" hidden></p></form>
+<div class="example" id="example"><span>TRY THIS SCENARIO</span><button id="sample" type="button">What should we quote Northstar Retail for a managed-payroll setup for 120 employees in Belgium?</button></div>
+<div class="source-row" id="source-row"><span>Search across</span><span class="source-pill">▤ &nbsp;Proposals</span><span class="source-pill">▧ &nbsp;Project notes</span><span class="source-pill">☷ &nbsp;Team knowledge</span></div>
+</section>
+<section id="search-loading" class="loading-panel" hidden aria-live="polite" aria-busy="true"><div class="spinner" aria-hidden="true"></div><h2>Connecting the evidence</h2><p id="loading-text">Searching proposals and project notes…</p><div class="loading-stages"><span>Find</span><i></i><span>Compare</span><i></i><span>Understand</span></div></section>
+<section id="results" hidden aria-labelledby="results-title">
+<div class="section-head"><div><div class="eyebrow">YOUR SEARCH</div><h2 id="results-title" tabindex="-1">Three comparisons. One unresolved question.</h2></div><span class="status amber">Needs clarification</span></div>
+<div class="context-tags"><span>Northstar Retail</span><span>Belgium</span><span>120 employees</span><span>Managed payroll · One-time setup</span></div>
+<div class="answer-panel"><div class="answer-icon" aria-hidden="true">i</div><div><h3>No supported Belgian quote found</h3><p>These projects offer useful comparisons, but none establishes a Belgian setup price. Migration and integration scope may also differ. <strong>A specialist needs to confirm the missing details.</strong></p></div></div>
+<div class="evidence-title"><h3>What the evidence says</h3><span>3 comparable projects · 6 documents</span></div>
+<div class="result-grid" id="result-cards"></div>
+<p class="evidence-note"><span aria-hidden="true">ⓘ</span> Repeated mentions of one quote are not independent confirmation. Different currencies and project scopes are not directly comparable.</p>
+<div class="gap-panel"><div class="gap-copy"><span class="eyebrow">THE MISSING PIECE</span><h3>Who can confirm the Belgian scope and price?</h3><p>We need Belgian setup pricing and Northstar’s migration and integration requirements.</p><div class="gap-tags"><span>Belgian pricing</span><span>Migration scope</span><span>Client context</span></div></div><button id="find-experts" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M17 5a3 3 0 0 1 0 6m1 3a5 5 0 0 1 3 4v2"/></svg>Find someone who can clarify</button></div>
+</section>
+<section id="experts-loading" class="loading-panel small" hidden aria-live="polite"><div class="spinner" aria-hidden="true"></div><h2>Finding the right people</h2><p>Matching expertise, recent activity and relevant contributions…</p></section>
+<section id="experts" hidden aria-labelledby="experts-title"><div class="section-head"><div><div class="eyebrow">CLOSE THE KNOWLEDGE GAP</div><h2 id="experts-title" tabindex="-1">The right people to move this forward.</h2><p class="section-description">Ranked for this gap. Each person brings a different piece of the answer.</p></div><span class="status green">3 recommended people</span></div><div id="expert-cards" class="expert-grid"></div><details class="method"><summary>How are these people ranked?</summary><p>Match score = 50% context match + 30% recent relevant activity + 20% relevant contributions. Each factor is scored from 0–100 in this fictional dataset. Contribution scores are capped at 10 distinct relevant documents; recent activity is measured as of 30 September 2026. Context scores are manually assigned for this scenario.</p><p>These are configurable prototype assumptions, not validated probabilities. A high match score means a promising person to ask; it does not guarantee they know the answer. The three shown are the highest-scoring people in a five-person demo pool.</p></details></section>
+</main><footer><span><strong>clarify</strong> &nbsp; Find it. Understand it. Ask the right person.</span><span>Demo data · Fictional clients, quotes and people · Search is simulated</span></footer>
+</body></html>
