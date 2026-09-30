@@ -1,4 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import DocumentsPage from "./DocumentsPage";
+import PeopleSwipePage from "./PeopleSwipePage";
+import ReviewingPage from "./ReviewingPage";
 
 function formatBytes(bytes) {
   if (bytes < 1024) return `${bytes} B`;
@@ -28,6 +31,7 @@ function MessageBubble({ message }) {
 }
 
 export default function App() {
+  const [view, setView] = useState("chat");
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
   const [files, setFiles] = useState([]);
@@ -52,8 +56,9 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    if (view !== "chat") return;
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, sending]);
+  }, [messages, sending, view]);
 
   useEffect(() => {
     const el = textareaRef.current;
@@ -61,6 +66,10 @@ export default function App() {
     el.style.height = "0px";
     el.style.height = `${Math.min(el.scrollHeight, 180)}px`;
   }, [text]);
+
+  const goToDocuments = useCallback(() => {
+    setView("documents");
+  }, []);
 
   async function handleNewChat() {
     setError("");
@@ -70,6 +79,7 @@ export default function App() {
       setMessages([]);
       setText("");
       setFiles([]);
+      setView("chat");
       setSidebarOpen(false);
     } catch (err) {
       console.error(err);
@@ -102,20 +112,9 @@ export default function App() {
     formData.append("text", trimmed);
     files.forEach((file) => formData.append("files", file));
 
-    const optimisticUser = {
-      _id: `local-user-${Date.now()}`,
-      role: "user",
-      text: trimmed,
-      files: files.map((file) => ({
-        originalName: file.name,
-        mimeType: file.type,
-        size: file.size,
-      })),
-    };
-
-    setMessages((prev) => [...prev, optimisticUser]);
     setText("");
     setFiles([]);
+    setView("reviewing");
 
     try {
       const response = await fetch("/api/chat", {
@@ -128,21 +127,42 @@ export default function App() {
       }
 
       const data = await response.json();
-      setMessages((prev) => {
-        const withoutOptimistic = prev.filter((msg) => msg._id !== optimisticUser._id);
-        return [...withoutOptimistic, data.userMessage, data.assistantMessage];
-      });
+      setMessages((prev) => [...prev, data.userMessage, data.assistantMessage]);
     } catch (err) {
       console.error(err);
       setError("Failed to send message");
-      setMessages((prev) => prev.filter((msg) => msg._id !== optimisticUser._id));
       setText(trimmed);
+      setView("chat");
     } finally {
       setSending(false);
     }
   }
 
   const canSend = (text.trim().length > 0 || files.length > 0) && !sending;
+
+  if (view === "reviewing") {
+    return (
+      <div className="app-shell flow-shell">
+        <ReviewingPage onComplete={goToDocuments} />
+      </div>
+    );
+  }
+
+  if (view === "documents") {
+    return (
+      <div className="app-shell flow-shell">
+        <DocumentsPage onSearchPerson={() => setView("people")} />
+      </div>
+    );
+  }
+
+  if (view === "people") {
+    return (
+      <div className="app-shell flow-shell">
+        <PeopleSwipePage onBack={() => setView("documents")} />
+      </div>
+    );
+  }
 
   return (
     <div className="app-shell">
@@ -151,7 +171,7 @@ export default function App() {
         <button type="button" className="new-chat-btn" onClick={handleNewChat}>
           New chat
         </button>
-        <p className="sidebar-note">Chat-style MERN demo with placeholder replies.</p>
+        <p className="sidebar-note">Send a message to start document review.</p>
       </aside>
 
       {sidebarOpen ? (
@@ -180,19 +200,13 @@ export default function App() {
           {messages.length === 0 ? (
             <section className="empty-state">
               <h1>Tectonic</h1>
-              <p>Ask anything. Attach a file if you like. Replies are placeholder lorem ipsum.</p>
+              <p>Send a message to review documents, then find a relevant person.</p>
             </section>
           ) : (
             <div className="message-list">
               {messages.map((message) => (
                 <MessageBubble key={message._id} message={message} />
               ))}
-              {sending ? (
-                <article className="message message-assistant pending">
-                  <div className="message-label">Tectonic</div>
-                  <p className="message-text thinking">Thinking…</p>
-                </article>
-              ) : null}
               <div ref={bottomRef} />
             </div>
           )}
@@ -250,7 +264,7 @@ export default function App() {
               Send
             </button>
           </form>
-          <p className="composer-hint">Enter to send · Shift+Enter for a new line</p>
+          <p className="composer-hint">Enter to send · starts document review</p>
         </footer>
       </div>
     </div>

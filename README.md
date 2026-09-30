@@ -6,7 +6,13 @@ Bilal, Baptiste, Petro, Stas (BelgianEast raaaah)
 
 ## Tectonic Chat (MERN)
 
-ChatGPT-style chat UI on a MERN stack. Type a message, optionally attach files, press **Send**, and get a placeholder lorem ipsum reply.
+ChatGPT-style chat UI on a MERN stack. Type a message, optionally attach files, press **Send**, then walk through a fake document-review flow and a Tinder-style colleague matcher.
+
+### Flow after Send
+
+1. **Reviewing** — stylish spinning files screen: “Reviewing the documents in process” (5 seconds)
+2. **Documents** — three placeholder document text boxes + **Search a relevant person**
+3. **People** — swipe deck of colleagues (left = green keep, right = red pass)
 
 ### Stack
 
