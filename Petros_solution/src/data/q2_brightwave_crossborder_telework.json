@@ -1,0 +1,271 @@
+{
+  "id": "brightwave-crossborder-telework",
+  "shortTitle": "Cross-border home-office allowance",
+  "question": "Can Brightwave Logistics pay a tax-free home-office allowance to Belgian-employed staff living in France who work from home 2 days a week?",
+  "keywords": ["brightwave", "telework", "home", "office", "homeworking", "remote", "allowance", "tax-free", "tax", "france", "french", "cross-border", "frontier", "resident", "work from home"],
+  "context": {
+    "client": "Brightwave Logistics",
+    "country": "Belgium / France",
+    "headcount": 85,
+    "channel": "Phone call",
+    "caller": "Nadia, HR Manager, Brightwave Logistics",
+    "transcript": [
+      { "who": "client", "text": "Hi, it's Nadia from Brightwave Logistics in Liège. Fourteen of our planners live in France and now work from home two days a week. Can we keep paying them the monthly home-office allowance tax-free? And does it change anything else in their payroll?" },
+      { "who": "employee", "text": "Good question. I'll double-check the cross-border rules and call you back." }
+    ]
+  },
+  "searchSteps": [
+    "Searching policies, procedures and Teams channels…",
+    "Reading the Belgian telework policy and cross-border guidance",
+    "Checking country applicability (BE employer · FR resident)",
+    "Detecting conflicting statements",
+    "Scoring relevance, freshness and trust"
+  ],
+  "stats": {
+    "documentsScanned": 967,
+    "extractsKept": 5,
+    "durationSec": 3.1,
+    "sources": [
+      { "name": "Knowledge base · Legal & Compliance", "count": 402 },
+      { "name": "SharePoint · Payroll procedures", "count": 318 },
+      { "name": "Teams channels", "count": 221 },
+      { "name": "Outlook (shared mailboxes)", "count": 26 }
+    ]
+  },
+  "groupsTitle": "Search results — what the sources claim",
+  "groups": [
+    {
+      "id": "g-policy",
+      "headline": "Tax-free, if structural telework",
+      "meta": "Belgium · 2026 · Official policy",
+      "evidenceNote": "Belgian telework allowance policy, owned by Legal BE. Two sections.",
+      "assessment": "Current and owned, but does not address non-residents",
+      "assessmentLevel": "medium",
+      "extracts": [
+        {
+          "id": "E1",
+          "title": "Policy — Home-office allowance (Belgium)",
+          "docType": "Official policy",
+          "source": "Knowledge base",
+          "path": "KB › Legal & Compliance BE › Telework › HOA-policy-2026",
+          "author": { "name": "Jan Peeters", "role": "Legal Counsel, Belgium", "status": "Active · policy owner" },
+          "owner": "Legal & Compliance BE",
+          "date": "2026-03-04",
+          "country": "Belgium",
+          "excerpt": "The monthly home-office allowance can be paid free of tax and social contributions when telework is structural (at least 1 day per week, documented in a telework agreement) and the amount stays within the published ceiling.",
+          "scores": { "relevance": 76, "reliability": 94, "freshness": 90 },
+          "independent": true,
+          "flags": [
+            { "type": "verified", "text": "Official policy, owner assigned, reviewed March 2026" },
+            { "type": "scope", "text": "Written for Belgian residents; non-residents not mentioned" }
+          ]
+        },
+        {
+          "id": "E2",
+          "title": "Policy FAQ — Home-office allowance",
+          "docType": "FAQ",
+          "source": "Knowledge base",
+          "path": "KB › Legal & Compliance BE › Telework › FAQ",
+          "author": { "name": "Jan Peeters", "role": "Legal Counsel, Belgium", "status": "Active · policy owner" },
+          "owner": "Legal & Compliance BE",
+          "date": "2026-03-04",
+          "country": "Belgium",
+          "excerpt": "Q: Does the allowance apply to employees living abroad? A: Contact the International Mobility team. Cross-border situations may change where the salary is taxed.",
+          "scores": { "relevance": 84, "reliability": 90, "freshness": 90 },
+          "independent": false,
+          "duplicateOf": "E1",
+          "flags": [
+            { "type": "missing", "text": "Explicitly defers the cross-border case to another team" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-teams",
+      "headline": "“Yes, no issue at all”",
+      "meta": "Teams · 2026 · Informal",
+      "evidenceNote": "One chat message from Kevin in #payroll-be-questions.",
+      "assessment": "Recent, but informal, unverified and about another client",
+      "assessmentLevel": "low",
+      "extracts": [
+        {
+          "id": "E3",
+          "title": "Teams message — #payroll-be-questions",
+          "docType": "Chat message",
+          "source": "Microsoft Teams",
+          "path": "Payroll BE › #payroll-be-questions · 12 Jun 2026",
+          "author": { "name": "Kevin Maes", "role": "Payroll Consultant, Belgium", "status": "Active" },
+          "owner": "—",
+          "date": "2026-06-12",
+          "country": "Belgium",
+          "excerpt": "We did exactly that for another logistics client with French staff. Just pay the allowance tax-free like for everyone else, no issue at all 👍",
+          "scores": { "relevance": 72, "reliability": 30, "freshness": 88 },
+          "independent": true,
+          "flags": [
+            { "type": "informal", "text": "Chat claim with no reference or approval" },
+            { "type": "conflict", "text": "Conflicts with E4 (telework threshold) and with the E2 FAQ caution" },
+            { "type": "unowned", "text": "No document owner" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-guideline",
+      "headline": "Telework days may shift taxation",
+      "meta": "FR–BE · 2021 · Guideline",
+      "evidenceNote": "Cross-border taxation guideline. Its author left SD Worx.",
+      "assessment": "Most relevant topic, but outdated and without an owner",
+      "assessmentLevel": "low",
+      "extracts": [
+        {
+          "id": "E4",
+          "title": "Guideline — Cross-border employees France–Belgium",
+          "docType": "Internal guideline",
+          "source": "SharePoint",
+          "path": "/International/Guidelines/FR-BE_crossborder_v2.docx",
+          "author": { "name": "Luc Hermans", "role": "Former International Tax Advisor", "status": "Left SD Worx (2023)" },
+          "owner": "Unassigned",
+          "date": "2021-09-17",
+          "country": "France / Belgium",
+          "excerpt": "Days worked from home in the country of residence may count as work performed abroad. Above the tolerated number of days, part of the salary may become taxable in France. Social-security affiliation (A1) must be reviewed if telework exceeds 25%.",
+          "scores": { "relevance": 92, "reliability": 58, "freshness": 18 },
+          "independent": true,
+          "flags": [
+            { "type": "outdated", "text": "5 years old; post-2022 telework agreements are not reflected" },
+            { "type": "unowned", "text": "The author has left and no owner is assigned" },
+            { "type": "conflict", "text": "Contradicts the Teams claim (E3)" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-nl",
+      "headline": "Allowance procedure (NL)",
+      "meta": "Netherlands · 2025 · Procedure",
+      "evidenceNote": "Dutch home-working allowance payroll procedure.",
+      "assessment": "Wrong country, so it does not apply",
+      "assessmentLevel": "low",
+      "extracts": [
+        {
+          "id": "E5",
+          "title": "Procedure — Thuiswerkvergoeding (NL)",
+          "docType": "Payroll procedure",
+          "source": "SharePoint",
+          "path": "/Payroll/NL/Procedures/thuiswerkvergoeding_2025.pdf",
+          "author": { "name": "Sanne Bakker", "role": "Payroll Specialist, Netherlands", "status": "Active" },
+          "owner": "Payroll Netherlands",
+          "date": "2025-01-08",
+          "country": "Netherlands",
+          "excerpt": "The daily home-working allowance is paid untaxed per registered home-working day, via the work-related costs scheme.",
+          "scores": { "relevance": 22, "reliability": 85, "freshness": 70 },
+          "independent": true,
+          "flags": [
+            { "type": "country", "text": "Dutch rules, not applicable to a Belgian employer" }
+          ]
+        }
+      ]
+    }
+  ],
+  "signals": [
+    { "type": "conflict", "text": "The Teams message (E3) says “no issue”, while the 2021 guideline (E4) says telework days may shift taxation to France." },
+    { "type": "unowned", "text": "The most relevant document (E4) has no owner since its author left in 2023." },
+    { "type": "outdated", "text": "E4 is 5 years old; cross-border telework rules have changed since." },
+    { "type": "country", "text": "One result (E5) is Dutch and was excluded from the answer." }
+  ],
+  "answer": {
+    "verdict": "Conflicting sources — verify first",
+    "verdictLevel": "low",
+    "text": "The Belgian policy allows a tax-free home-office allowance for structural telework, but it was written for Belgian residents and explicitly refers cross-border cases to International Mobility. The only cross-border source is from 2021 and unowned; it warns that telework days in France may shift part of the taxation and affect social security. A recent Teams message says “no issue”, but it is informal and concerns another client.",
+    "indicative": "Likely: the allowance itself can stay, but the 2 telework days in France may change tax and social-security treatment. This is unconfirmed.",
+    "keyPoints": [
+      { "tone": "ok", "text": "The Belgian policy (2026, owned) confirms the allowance for structural telework." },
+      { "tone": "risk", "text": "Conflict: the Teams claim contradicts the cross-border guideline." },
+      { "tone": "warn", "text": "The cross-border guideline is 5 years old and has no owner." },
+      { "tone": "warn", "text": "A1 social-security certificate may need review (2 of 5 days = 40% telework)." }
+    ],
+    "gap": "Confirm the current France–Belgium rules on telework days for cross-border employees, and whether the allowance and A1 affiliation remain unchanged for Brightwave's 14 employees.",
+    "gapItems": ["FR–BE tax on telework days", "A1 social-security status", "Allowance policy for non-residents"],
+    "metrics": {
+      "confidence": 41,
+      "relevance": 78,
+      "reliability": 62,
+      "freshness": 58,
+      "contextFit": 45,
+      "coverage": 50
+    },
+    "counts": { "extracts": 5, "independent": 4, "duplicates": 1, "conflicts": 1, "outdated": 1, "unowned": 2 }
+  },
+  "expertSearchSteps": [
+    "Mapping authors and owners of the evidence",
+    "Finding the International Mobility experts for FR–BE",
+    "Checking the owners of the Belgian telework policy",
+    "Checking current role and availability",
+    "Ranking by pertinence to the open gap"
+  ],
+  "experts": [
+    {
+      "id": "p-camille",
+      "name": "Camille Dubois",
+      "initials": "CD",
+      "role": "Senior Consultant, Cross-border Tax",
+      "team": "International Mobility · Belgium",
+      "location": "Brussels",
+      "languages": ["FR", "EN", "NL"],
+      "email": "camille.dubois@sdworx.example",
+      "phone": "+32 2 555 03 71",
+      "availability": { "status": "available", "note": "Available · usually replies within 1 h" },
+      "factors": { "expertise": 96, "context": 92, "evidence": 50, "recency": 90, "availability": 75 },
+      "reasons": [
+        "Named contact for cross-border cases in the E2 FAQ",
+        "Handled 23 FR–BE telework cases since the 2024 rule update",
+        "Can say whether the E4 guideline is still valid, or replace it"
+      ],
+      "covers": ["FR–BE tax on telework days", "Allowance policy for non-residents"],
+      "linkedEvidence": ["E2"]
+    },
+    {
+      "id": "p-jan",
+      "name": "Jan Peeters",
+      "initials": "JP",
+      "role": "Legal Counsel",
+      "team": "Legal & Compliance · Belgium",
+      "location": "Brussels",
+      "languages": ["NL", "FR", "EN"],
+      "email": "jan.peeters@sdworx.example",
+      "phone": "+32 2 555 03 12",
+      "availability": { "status": "busy", "note": "In meetings · replies same day" },
+      "factors": { "expertise": 72, "context": 85, "evidence": 95, "recency": 90, "availability": 55 },
+      "reasons": [
+        "Owner of the Belgian home-office allowance policy (E1, E2)",
+        "Can confirm whether the policy covers non-residents",
+        "Can assign a new owner to the orphaned E4 guideline"
+      ],
+      "covers": ["Allowance policy for non-residents"],
+      "linkedEvidence": ["E1", "E2"]
+    },
+    {
+      "id": "p-ines",
+      "name": "Inès Laurent",
+      "initials": "IL",
+      "role": "Social Security Specialist (A1)",
+      "team": "Payroll Compliance · France",
+      "location": "Paris",
+      "languages": ["FR", "EN"],
+      "email": "ines.laurent@sdworx.example",
+      "phone": "+33 1 55 50 42 18",
+      "availability": { "status": "available", "note": "Available · same time zone" },
+      "factors": { "expertise": 85, "context": 70, "evidence": 20, "recency": 70, "availability": 90 },
+      "reasons": [
+        "Reviews A1 certificates for French residents with foreign employers",
+        "Knows the French side: when the telework share affects affiliation",
+        "Can tell whether 40% telework triggers an A1 review"
+      ],
+      "covers": ["A1 social-security status"],
+      "linkedEvidence": []
+    }
+  ],
+  "notRecommended": [
+    { "name": "Kevin Maes", "role": "Payroll Consultant, Belgium", "reason": "Author of the Teams claim (E3). Useful background on the other client, but the claim is informal and not an authority." },
+    { "name": "Luc Hermans", "role": "Former International Tax Advisor", "reason": "Author of E4, but left SD Worx in 2023, so he can't be contacted internally." }
+  ]
+}

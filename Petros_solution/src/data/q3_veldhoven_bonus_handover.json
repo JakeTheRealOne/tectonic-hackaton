@@ -1,0 +1,249 @@
+{
+  "id": "veldhoven-bonus-handover",
+  "shortTitle": "Inherited client: split year-end bonus",
+  "question": "Is the split year-end bonus arrangement for Veldhoven Foods still active for this December's payroll?",
+  "keywords": ["veldhoven", "bonus", "year-end", "end-of-year", "13th", "split", "instalment", "installment", "december", "handover", "inherited", "arrangement", "portfolio"],
+  "context": {
+    "client": "Veldhoven Foods",
+    "country": "Belgium",
+    "headcount": 240,
+    "channel": "Phone call",
+    "caller": "Marc, HR Director, Veldhoven Foods",
+    "transcript": [
+      { "who": "client", "text": "Hi, it's Marc from Veldhoven Foods. Your predecessor agreed we'd pay the year-end bonus in two parts, November and December. Is that still set up for this year? I need to tell our works council by Friday." },
+      { "who": "employee", "text": "I took over your file recently. Let me check what was agreed and come back to you." }
+    ]
+  },
+  "searchSteps": [
+    "Searching the client file, handover notes and emails…",
+    "Reading workflow tickets and payroll configuration",
+    "Building a timeline of the arrangement",
+    "Detecting contradictions between sources",
+    "Scoring relevance, freshness and trust"
+  ],
+  "stats": {
+    "documentsScanned": 438,
+    "extractsKept": 4,
+    "durationSec": 2.9,
+    "sources": [
+      { "name": "Client file · SharePoint", "count": 176 },
+      { "name": "Outlook (client mailbox)", "count": 188 },
+      { "name": "ServiceNow tickets", "count": 61 },
+      { "name": "Payroll system configuration", "count": 13 }
+    ]
+  },
+  "groupsTitle": "Search results — timeline of the arrangement",
+  "groups": [
+    {
+      "id": "g-handover",
+      "headline": "Split bonus agreed",
+      "meta": "Handover · 2022",
+      "evidenceNote": "Handover document by Lotte, the previous consultant.",
+      "assessment": "Owned, but written before later changes",
+      "assessmentLevel": "medium",
+      "extracts": [
+        {
+          "id": "E1",
+          "title": "Client handover — Veldhoven Foods",
+          "docType": "Handover document",
+          "source": "SharePoint",
+          "path": "/Clients/Veldhoven_Foods/Handover_2022.docx",
+          "author": { "name": "Lotte Vermeulen", "role": "Team Lead Payroll, Ghent (former consultant)", "status": "Active · changed role in 2024" },
+          "owner": "Payroll Team Ghent",
+          "date": "2022-11-08",
+          "country": "Belgium",
+          "excerpt": "Special arrangement: the year-end bonus is paid in two instalments (50% in the November run, 50% in December), agreed with the client and the works council. Configured as BONUS_EOY_A / BONUS_EOY_B.",
+          "scores": { "relevance": 90, "reliability": 72, "freshness": 30 },
+          "independent": true,
+          "flags": [
+            { "type": "outdated", "text": "Written in 2022; not updated after the 2024–2025 changes" },
+            { "type": "conflict", "text": "Contradicts the current configuration (E4)" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-email",
+      "headline": "Client asked to revert",
+      "meta": "Email · 2024",
+      "evidenceNote": "Email thread between Veldhoven HR and Lotte.",
+      "assessment": "Shows intent, but no decision recorded",
+      "assessmentLevel": "medium",
+      "extracts": [
+        {
+          "id": "E2",
+          "title": "Email: Bonus payment 2024 — single payment?",
+          "docType": "Email thread",
+          "source": "Outlook",
+          "path": "veldhoven-foods@ client mailbox · 3 messages",
+          "author": { "name": "Lotte Vermeulen", "role": "Team Lead Payroll, Ghent (former consultant)", "status": "Active · changed role in 2024" },
+          "owner": "—",
+          "date": "2024-10-15",
+          "country": "Belgium",
+          "excerpt": "Client (HR): “We would like to go back to a single December payment from next year, to be confirmed after the works council meeting.” Reply: “Noted, we will check with you in Q1 and adapt the configuration.”",
+          "scores": { "relevance": 86, "reliability": 55, "freshness": 52 },
+          "independent": true,
+          "flags": [
+            { "type": "missing", "text": "Works council confirmation is not in the thread" },
+            { "type": "unowned", "text": "Email, so no document owner" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-ticket",
+      "headline": "Changed to single payment",
+      "meta": "Ticket · 2025",
+      "evidenceNote": "ServiceNow change ticket closed by Youssef.",
+      "assessment": "Recent and system-backed, but the reason is not documented",
+      "assessmentLevel": "medium",
+      "extracts": [
+        {
+          "id": "E3",
+          "title": "CHG-2025-18832 — Veldhoven: merge bonus components",
+          "docType": "Workflow ticket",
+          "source": "ServiceNow",
+          "path": "Change request CHG-2025-18832 · status: Closed / Implemented",
+          "author": { "name": "Youssef El Amrani", "role": "Payroll Configuration Specialist", "status": "Active" },
+          "owner": "Payroll Configuration BE",
+          "date": "2025-03-21",
+          "country": "Belgium",
+          "excerpt": "Merged BONUS_EOY_A and BONUS_EOY_B into BONUS_EOY (100% in December run) on request of the account team. Client approval: “see email”. No attachment.",
+          "scores": { "relevance": 88, "reliability": 74, "freshness": 78 },
+          "independent": true,
+          "flags": [
+            { "type": "missing", "text": "Refers to an approval email that isn't attached" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-config",
+      "headline": "Current config: one December payment",
+      "meta": "System · Sept 2026",
+      "evidenceNote": "Live payroll configuration export.",
+      "assessment": "Most current source; shows what will happen, not what was agreed",
+      "assessmentLevel": "high",
+      "extracts": [
+        {
+          "id": "E4",
+          "title": "Payroll configuration — Veldhoven Foods (live)",
+          "docType": "System data",
+          "source": "Payroll system",
+          "path": "Client 40218 › Pay components › BONUS_EOY",
+          "author": { "name": "System export", "role": "Automated", "status": "Live data" },
+          "owner": "Payroll Configuration BE",
+          "date": "2026-09-28",
+          "country": "Belgium",
+          "excerpt": "BONUS_EOY — 100% — paid in the December run. BONUS_EOY_A / _B: inactive since 01/04/2025.",
+          "scores": { "relevance": 95, "reliability": 96, "freshness": 99 },
+          "independent": true,
+          "flags": [
+            { "type": "verified", "text": "Live system data, refreshed 2 days ago" },
+            { "type": "conflict", "text": "Contradicts the handover document (E1)" }
+          ]
+        }
+      ]
+    }
+  ],
+  "signals": [
+    { "type": "conflict", "text": "The handover (E1) says split payment; the live configuration (E4) says a single December payment." },
+    { "type": "missing", "text": "Neither a client or works council approval of the change nor the “see email” from ticket E3 was found." },
+    { "type": "outdated", "text": "The handover document was never updated after the 2025 change." }
+  ],
+  "answer": {
+    "verdict": "Probably no longer active — confirm before replying",
+    "verdictLevel": "medium",
+    "text": "The live configuration shows the year-end bonus as a single December payment, and a 2025 change ticket confirms the split was removed. The client itself asked to revert in 2024. However, no document records the formal client or works council approval, and the handover document still describes the old split arrangement.",
+    "indicative": "Likely answer: a single payment in December 2026, unless the client never formally approved the change.",
+    "keyPoints": [
+      { "tone": "ok", "text": "Live system data (Sept 2026) shows a single December payment." },
+      { "tone": "ok", "text": "Timeline is consistent: client request (2024), then change implemented (2025)." },
+      { "tone": "risk", "text": "The client's approval email referenced in the ticket is missing." },
+      { "tone": "warn", "text": "The handover document is outdated and would mislead the next consultant." }
+    ],
+    "gap": "Confirm that Veldhoven Foods formally approved ending the split bonus in 2025, then update the handover document before replying to Marc.",
+    "gapItems": ["Client approval of the change", "History of the arrangement", "Configuration detail"],
+    "metrics": {
+      "confidence": 63,
+      "relevance": 90,
+      "reliability": 74,
+      "freshness": 65,
+      "contextFit": 95,
+      "coverage": 70
+    },
+    "counts": { "extracts": 4, "independent": 4, "duplicates": 0, "conflicts": 1, "outdated": 1, "unowned": 1 }
+  },
+  "expertSearchSteps": [
+    "Mapping authors and owners of the evidence",
+    "Finding previous consultants and the account team",
+    "Checking who implemented the configuration change",
+    "Checking current role and availability",
+    "Ranking by pertinence to the open gap"
+  ],
+  "experts": [
+    {
+      "id": "p-lotte",
+      "name": "Lotte Vermeulen",
+      "initials": "LV",
+      "role": "Team Lead Payroll (former Veldhoven consultant)",
+      "team": "Payroll Services · Ghent",
+      "location": "Ghent",
+      "languages": ["NL", "EN", "FR"],
+      "email": "lotte.vermeulen@sdworx.example",
+      "phone": "+32 9 555 04 26",
+      "availability": { "status": "available", "note": "Available · replies within half a day" },
+      "factors": { "expertise": 80, "context": 100, "evidence": 90, "recency": 60, "availability": 70 },
+      "reasons": [
+        "Managed Veldhoven Foods from 2019 to 2024 and wrote the handover (E1)",
+        "Received the client's 2024 request to revert (E2)",
+        "Most likely to know where the approval email is"
+      ],
+      "covers": ["History of the arrangement", "Client approval of the change"],
+      "linkedEvidence": ["E1", "E2"]
+    },
+    {
+      "id": "p-youssef",
+      "name": "Youssef El Amrani",
+      "initials": "YE",
+      "role": "Payroll Configuration Specialist",
+      "team": "Payroll Configuration · Belgium",
+      "location": "Brussels",
+      "languages": ["FR", "NL", "EN"],
+      "email": "youssef.elamrani@sdworx.example",
+      "phone": "+32 2 555 05 90",
+      "availability": { "status": "available", "note": "Available · usually replies within 1 h" },
+      "factors": { "expertise": 70, "context": 70, "evidence": 85, "recency": 95, "availability": 80 },
+      "reasons": [
+        "Implemented change CHG-2025-18832 (E3)",
+        "Can confirm who requested the change and when",
+        "Can verify the December 2026 run setup"
+      ],
+      "covers": ["Configuration detail"],
+      "linkedEvidence": ["E3", "E4"]
+    },
+    {
+      "id": "p-hilde",
+      "name": "Hilde Wouters",
+      "initials": "HW",
+      "role": "Account Manager, Veldhoven Foods",
+      "team": "Client Success · Belgium",
+      "location": "Antwerp",
+      "languages": ["NL", "EN"],
+      "email": "hilde.wouters@sdworx.example",
+      "phone": "+32 3 555 06 44",
+      "availability": { "status": "away", "note": "On leave · back Thursday" },
+      "factors": { "expertise": 75, "context": 100, "evidence": 40, "recency": 85, "availability": 40 },
+      "reasons": [
+        "Account owner, and the “account team” that requested the 2025 change",
+        "Holds the contract and amendment history",
+        "Can confirm the works council approval with the client"
+      ],
+      "covers": ["Client approval of the change"],
+      "linkedEvidence": []
+    }
+  ],
+  "notRecommended": [
+    { "name": "Bram Coppens", "role": "Former Payroll Reviewer", "reason": "Reviewed the 2022 handover, but left SD Worx in 2023." }
+  ]
+}

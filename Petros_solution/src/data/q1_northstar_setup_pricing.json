@@ -1,0 +1,281 @@
+{
+  "id": "northstar-setup-pricing",
+  "shortTitle": "Managed-payroll setup quote",
+  "question": "What should we quote Northstar Retail for a managed-payroll setup for 120 employees in Belgium?",
+  "keywords": ["northstar", "quote", "price", "pricing", "setup", "set-up", "fee", "managed", "payroll", "120", "subsidiary", "charge", "estimate", "cost", "onboarding"],
+  "context": {
+    "client": "Northstar Retail",
+    "country": "Belgium",
+    "headcount": 120,
+    "channel": "Phone call",
+    "caller": "Alex, Northstar Retail",
+    "transcript": [
+      { "who": "client", "text": "Hi, it's Alex from Northstar Retail. We're opening our Belgian subsidiary with 120 employees. What would SD Worx charge for the initial setup of managed payroll? We need an estimate today." },
+      { "who": "employee", "text": "Let me check comparable projects and get back to you." }
+    ]
+  },
+  "searchSteps": [
+    "Searching proposals and project notes…",
+    "Reading CRM opportunities and signed quotes",
+    "Matching country, client and company size",
+    "Detecting duplicates and repeated quotes",
+    "Scoring relevance, freshness and trust"
+  ],
+  "stats": {
+    "documentsScanned": 1284,
+    "extractsKept": 6,
+    "durationSec": 3.4,
+    "sources": [
+      { "name": "SharePoint · Sales proposals", "count": 812 },
+      { "name": "Salesforce CRM", "count": 301 },
+      { "name": "Outlook (shared mailboxes)", "count": 124 },
+      { "name": "Teams channels", "count": 47 }
+    ]
+  },
+  "groupsTitle": "Search results — all fictional, one-time setup fees",
+  "groups": [
+    {
+      "id": "g-greece",
+      "headline": "€10,000",
+      "meta": "Greece · 2023",
+      "evidenceNote": "Different retailer, 300 employees. Three documents from Maria.",
+      "assessment": "Older; different country and scale",
+      "assessmentLevel": "low",
+      "extracts": [
+        {
+          "id": "E1",
+          "title": "Proposal — Hellas Market Group, managed payroll",
+          "docType": "Signed proposal",
+          "source": "SharePoint",
+          "path": "/Sales/GR/Proposals/2023/Hellas_Market_Group_v3.pdf",
+          "author": { "name": "Maria Papadopoulou", "role": "Sales Manager, Greece", "status": "Moved to HR Analytics (2024)" },
+          "owner": "Sales Greece",
+          "date": "2023-03-14",
+          "country": "Greece",
+          "excerpt": "One-time implementation fee: €10,000, covering payroll setup, data migration from the legacy system and two integrations (time & attendance, ERP). Applies to 300 employees across 3 legal entities.",
+          "scores": { "relevance": 52, "reliability": 78, "freshness": 32 },
+          "independent": true,
+          "flags": [
+            { "type": "outdated", "text": "3.5 years old — based on the 2023 Greek price book" },
+            { "type": "country", "text": "Greece, not Belgium" },
+            { "type": "scope", "text": "300 employees, 3 entities, 2 integrations" }
+          ]
+        },
+        {
+          "id": "E2",
+          "title": "Hellas Market — kick-off meeting notes",
+          "docType": "Meeting notes",
+          "source": "SharePoint",
+          "path": "/Projects/GR/Hellas_Market/Kickoff_notes.docx",
+          "author": { "name": "Maria Papadopoulou", "role": "Sales Manager, Greece", "status": "Moved to HR Analytics (2024)" },
+          "owner": "Sales Greece",
+          "date": "2023-04-02",
+          "country": "Greece",
+          "excerpt": "Client confirmed the €10k setup fee as agreed in the proposal. Go-live planned for July.",
+          "scores": { "relevance": 44, "reliability": 60, "freshness": 32 },
+          "independent": false,
+          "duplicateOf": "E1",
+          "flags": [
+            { "type": "duplicate", "text": "Repeats the E1 figure, so it is not independent confirmation" }
+          ]
+        },
+        {
+          "id": "E3",
+          "title": "Email: RE: Hellas pricing approval",
+          "docType": "Email",
+          "source": "Outlook",
+          "path": "sales-gr@ shared mailbox · 10 Mar 2023",
+          "author": { "name": "Maria Papadopoulou", "role": "Sales Manager, Greece", "status": "Moved to HR Analytics (2024)" },
+          "owner": "—",
+          "date": "2023-03-10",
+          "country": "Greece",
+          "excerpt": "Approved: €10,000 setup, in line with GR price book 2023. Discount not applicable.",
+          "scores": { "relevance": 40, "reliability": 55, "freshness": 30 },
+          "independent": false,
+          "duplicateOf": "E1",
+          "flags": [
+            { "type": "duplicate", "text": "Same quote as E1, from the same author" },
+            { "type": "unowned", "text": "Email, so no document owner" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-netherlands",
+      "headline": "€5,000",
+      "meta": "Netherlands · 2025",
+      "evidenceNote": "Similar retailer, 100 employees. Two proposals from Tom.",
+      "assessment": "Similar scale; different client and country",
+      "assessmentLevel": "medium",
+      "extracts": [
+        {
+          "id": "E4",
+          "title": "Proposal — Oranje Retail BV, payroll outsourcing",
+          "docType": "Signed proposal",
+          "source": "SharePoint",
+          "path": "/Sales/NL/Proposals/2025/Oranje_Retail_final.pdf",
+          "author": { "name": "Tom de Vries", "role": "Account Executive, Netherlands", "status": "Active · out of office until 14 Oct" },
+          "owner": "Sales Netherlands",
+          "date": "2025-05-20",
+          "country": "Netherlands",
+          "excerpt": "Set-up fee €5,000 for 100 employees. Excludes data migration: the client supplies clean master data in the SD Worx template. One standard integration (HRIS export) included.",
+          "scores": { "relevance": 68, "reliability": 82, "freshness": 74 },
+          "independent": true,
+          "flags": [
+            { "type": "country", "text": "Netherlands, not Belgium" },
+            { "type": "scope", "text": "Migration excluded, so likely lower than a full setup" }
+          ]
+        },
+        {
+          "id": "E5",
+          "title": "Proposal — Oranje Retail BV (revision 2)",
+          "docType": "Proposal draft",
+          "source": "SharePoint",
+          "path": "/Sales/NL/Proposals/2025/Oranje_Retail_rev2.pdf",
+          "author": { "name": "Tom de Vries", "role": "Account Executive, Netherlands", "status": "Active · out of office until 14 Oct" },
+          "owner": "Sales Netherlands",
+          "date": "2025-06-03",
+          "country": "Netherlands",
+          "excerpt": "Set-up fee unchanged at €5,000. Monthly per-payslip fee revised after negotiation.",
+          "scores": { "relevance": 55, "reliability": 70, "freshness": 76 },
+          "independent": false,
+          "duplicateOf": "E4",
+          "flags": [
+            { "type": "duplicate", "text": "Revision of E4, so the setup figure is not independent" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g-uk",
+      "headline": "£7,000",
+      "meta": "UK · 2026",
+      "evidenceNote": "Northstar Retail, 120 employees. One proposal from Emma.",
+      "assessment": "Recent; same client and scale; different country",
+      "assessmentLevel": "medium",
+      "extracts": [
+        {
+          "id": "E6",
+          "title": "Proposal — Northstar Retail UK Ltd, managed payroll",
+          "docType": "Signed proposal",
+          "source": "Salesforce CRM",
+          "path": "Opportunity OPP-2026-0412 · attachment",
+          "author": { "name": "Emma Clarke", "role": "Account Manager, UK", "status": "Active" },
+          "owner": "Sales UK",
+          "date": "2026-02-11",
+          "country": "United Kingdom",
+          "excerpt": "One-off setup fee £7,000 for 120 employees, including migration from Sage 50 and integration with Northstar's HRIS (Workday). UK statutory set-up only (RTI, pensions auto-enrolment).",
+          "scores": { "relevance": 81, "reliability": 84, "freshness": 93 },
+          "independent": true,
+          "flags": [
+            { "type": "verified", "text": "Same client group and same headcount" },
+            { "type": "country", "text": "UK statutory scope; Belgian Dimona/DmfA and joint-committee setup not included" },
+            { "type": "scope", "text": "GBP pricing; not convertible 1:1 to a Belgian quote" }
+          ]
+        }
+      ]
+    }
+  ],
+  "signals": [
+    { "type": "missing", "text": "No Belgian managed-payroll setup quote was found in the 2026 Belgian price book index or in the Belgian CRM." },
+    { "type": "duplicate", "text": "3 of 6 extracts repeat an earlier figure. They count as 3 independent sources, not 6." },
+    { "type": "outdated", "text": "The Greek quote (2023) predates the 2025 pricing model change." },
+    { "type": "scope", "text": "Migration and integration scope differs across all three comparables." }
+  ],
+  "answer": {
+    "verdict": "Not safe to quote yet",
+    "verdictLevel": "low",
+    "text": "These projects provide useful comparisons, but none establishes a Belgian setup price. Their migration and integration scope may also differ. Repeated mentions of the same quote are not independent confirmation.",
+    "indicative": "Comparable one-time fees range from €5,000 to about €10,000. This is an indication, not a quote.",
+    "keyPoints": [
+      { "tone": "ok", "text": "Closest match: the Northstar UK proposal (same client, 120 employees, 2026)." },
+      { "tone": "warn", "text": "None of the sources is Belgian, so Belgian statutory setup (Dimona, DmfA, joint committee) is not priced anywhere." },
+      { "tone": "warn", "text": "Scope differs: NL excludes migration, while UK and GR include 1–2 integrations." },
+      { "tone": "risk", "text": "The Greek figure is 3.5 years old and based on a retired price book." }
+    ],
+    "gap": "Confirm Belgian setup pricing and the migration/integration requirements for Northstar Retail.",
+    "gapItems": ["Belgian setup pricing", "Migration & integration scope"],
+    "metrics": {
+      "confidence": 34,
+      "relevance": 71,
+      "reliability": 78,
+      "freshness": 67,
+      "contextFit": 28,
+      "coverage": 40
+    },
+    "counts": { "extracts": 6, "independent": 3, "duplicates": 3, "conflicts": 0, "outdated": 1, "unowned": 1 }
+  },
+  "expertSearchSteps": [
+    "Mapping authors and owners of the evidence",
+    "Finding owners of the Belgian price book",
+    "Checking Belgian implementation teams (retail)",
+    "Checking current role and availability",
+    "Ranking by pertinence to the open gap"
+  ],
+  "experts": [
+    {
+      "id": "p-sophie",
+      "name": "Sophie Claes",
+      "initials": "SC",
+      "role": "Pricing Lead, Managed Payroll",
+      "team": "Commercial Excellence · Belgium",
+      "location": "Brussels",
+      "languages": ["NL", "FR", "EN"],
+      "email": "sophie.claes@sdworx.example",
+      "phone": "+32 2 555 01 14",
+      "availability": { "status": "available", "note": "Available · usually replies within 2 h" },
+      "factors": { "expertise": 95, "context": 95, "evidence": 60, "recency": 90, "availability": 85 },
+      "reasons": [
+        "Owns the 2026 Belgian managed-payroll price book",
+        "Approved 14 Belgian setup quotes in the last 12 months (4 in retail)",
+        "Can confirm whether a Belgian fee exists for 100–150 employees"
+      ],
+      "covers": ["Belgian setup pricing"],
+      "linkedEvidence": []
+    },
+    {
+      "id": "p-pieter",
+      "name": "Pieter Janssens",
+      "initials": "PJ",
+      "role": "Implementation Architect",
+      "team": "Payroll Implementations · Belgium",
+      "location": "Antwerp",
+      "languages": ["NL", "EN"],
+      "email": "pieter.janssens@sdworx.example",
+      "phone": "+32 3 555 02 37",
+      "availability": { "status": "busy", "note": "In workshops today · free after 15:00" },
+      "factors": { "expertise": 88, "context": 90, "evidence": 45, "recency": 80, "availability": 70 },
+      "reasons": [
+        "Scoped migration and integration for 9 Belgian retail onboardings since 2024",
+        "Knows the Workday → SD Worx integration used by Northstar UK",
+        "Can estimate the effort for Dimona/DmfA and joint-committee setup"
+      ],
+      "covers": ["Migration & integration scope"],
+      "linkedEvidence": []
+    },
+    {
+      "id": "p-emma",
+      "name": "Emma Clarke",
+      "initials": "EC",
+      "role": "Account Manager",
+      "team": "Sales · United Kingdom",
+      "location": "London",
+      "languages": ["EN"],
+      "email": "emma.clarke@sdworx.example",
+      "phone": "+44 20 5550 1882",
+      "availability": { "status": "available", "note": "Available · UK time (−1 h)" },
+      "factors": { "expertise": 70, "context": 55, "evidence": 95, "recency": 95, "availability": 60 },
+      "reasons": [
+        "Wrote the Northstar Retail UK proposal (E6) in Feb 2026",
+        "Knows Northstar's systems (Sage 50, Workday) and decision makers",
+        "Can share which scope items Northstar negotiated in the UK"
+      ],
+      "covers": ["Migration & integration scope"],
+      "linkedEvidence": ["E6"]
+    }
+  ],
+  "notRecommended": [
+    { "name": "Tom de Vries", "role": "Account Executive, Netherlands", "reason": "Authored E4/E5, but out of office until 14 Oct and only covers Dutch pricing." },
+    { "name": "Maria Papadopoulou", "role": "HR Analytics (formerly Sales Greece)", "reason": "Authored E1–E3, but moved roles in 2024 and her pricing knowledge dates from 2023." }
+  ]
+}
